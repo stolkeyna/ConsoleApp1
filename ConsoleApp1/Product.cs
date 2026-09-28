@@ -11,6 +11,7 @@ namespace ConsoleApp1
         private string _name;
         public string Name
         {
+            //hermetyzacja
             get { return _name; }
             set
             {
