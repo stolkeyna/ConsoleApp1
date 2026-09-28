@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 
 //zakres nazw w którym pracujemy, w którym nazwy są nie powtarzalne
 namespace ConsoleApp1
@@ -44,13 +45,20 @@ namespace ConsoleApp1
             }
         }
 
-        public string Categoty;
+        public string Category;
         public int Ammount;
 
         //właściwość wyliczana - nie przechowujemy tego tylko liczymy na żywo
         public double WarehouseValue
         {
             get { return _price * Ammount; }
+        }
+        public Product(string name, double price, string category, int ammount)
+        {
+            Name = name;
+            Price = price;
+            Category = category;
+            Ammount = ammount;
         }
     }
 }

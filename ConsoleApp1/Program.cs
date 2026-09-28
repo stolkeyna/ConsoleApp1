@@ -7,36 +7,37 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 //double[] ceny = { 899.00, 249.50, 379.00, 189.99, 599.00 };
 
 //utwórz nowy obiekt processor według definicji klasy Product
-Product processor = new Product();
+Product processor = new Product("AMD Ryzen", 890.00, "Podzespoły", 10);
 //nadaj mu wartości pól
-processor.Name = "AMD Ryzen";
-processor.Price = 890.00;
-processor.Categoty = "Podzespoły";
-processor.Ammount = 10;
-
+//processor.Name = "AMD Ryzen";
+//processor.Price = 890.00;
+//processor.Category = "Podzespoły";
+//processor.Ammount = 10;
+Product ram = new Product("Pamięć RAM", 250.00, "Podzespoły", 15);
 //można też tak
-Product ram = new Product
-{
-    Name = "Pamięć RAM",
-    Price = 250.00,
-    Categoty = "Podzespoły",
-    Ammount = 15
-};
-
-Product ssd = new Product
-{
-    Name = "Dysk ssd",
-    Price = 360.99,
-    Categoty = "Podzespoły",
-    Ammount = 27
-};
-Product zasilacz = new Product
-{
-    Name = "Zasilacz",
-    Price = 190.00,
-    Categoty = "Podzespoły",
-    Ammount = 13
-};
+//Product ram = new Product
+//{
+//    Name = "Pamięć RAM",
+//    Price = 250.00,
+//    Category = "Podzespoły",
+//    Ammount = 15
+//};
+Product ssd = new Product("Dysk ssd", 360.99, "Podzespoły", 27);
+Product zasilacz = new Product("Zasilacz", 190.00, "Podzespoły", 13);
+//Product ssd = new Product
+//{
+//    Name = "Dysk ssd",
+//    Price = 360.99,
+//    Category = "Podzespoły",
+//    Ammount = 27
+//};
+//Product zasilacz = new Product
+//{
+//    Name = "Zasilacz",
+//    Price = 190.00,
+//    Category = "Podzespoły",
+//    Ammount = 13
+//};
 
 //tworzymy tablice produktów
 Product[] products = {processor, ram, ssd, zasilacz};
@@ -47,7 +48,7 @@ double LowestPrice = 0;
 double HighestPrice = 0;
 foreach (Product product in products)
 {
-    Console.WriteLine($"Nazwa: {product.Name, -25}| Cena: {product.Price, 10:F2}| Kategoria: {product.Categoty}| Ilość: {product.Ammount, 5}");
+    Console.WriteLine($"Nazwa: {product.Name, -25}| Cena: {product.Price, 10:F2}| Kategoria: {product.Category}| Ilość: {product.Ammount, 5}");
     sum += product.Price;
     count++;
     for(int i = 0; i<products.Length; i++)
