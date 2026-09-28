@@ -44,6 +44,7 @@ Product[] products = {processor, ram, ssd, zasilacz};
 double sum = 0;
 int count = 0;
 double LowestPrice = 0;
+double HighestPrice = 0;
 foreach (Product product in products)
 {
     Console.WriteLine($"Nazwa: {product.Name, -25}| Cena: {product.Price, 10:F2}| Kategoria: {product.Categoty}| Ilość: {product.Ammount, 5}");
@@ -57,9 +58,21 @@ foreach (Product product in products)
             LowestPrice = product.Price;
         }
     }
-
+    for (int i = 0; i < products.Length; i++)
+    {
+        if (HighestPrice < product.Price)
+        {
+            HighestPrice = product.Price;
+        }
+    }
 }
-double average = sum / count;
+Console.WriteLine($"Najtańszy: {LowestPrice}");
+double AveragePrice = sum / count;
+Console.WriteLine($"cena średnia: {AveragePrice}");
+Console.WriteLine($"najdroższy: {HighestPrice}");
+
+//Console.WriteLine($"Najtańszy: {LowestPrice}| | najdroższy: {HighestPrice}");
+
 //Console.WriteLine($"Najtańszy: {}| cena średnia: {}| najdroższy: {}");
 //for (int i = 0; i < nazwy.Length; i++)
 //{
