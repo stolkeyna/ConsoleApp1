@@ -7,37 +7,11 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 //double[] ceny = { 899.00, 249.50, 379.00, 189.99, 599.00 };
 
 //utwórz nowy obiekt processor według definicji klasy Product
-Product processor = new Product("AMD Ryzen", 890.00, "Podzespoły", 10);
-//nadaj mu wartości pól
-//processor.Name = "AMD Ryzen";
-//processor.Price = 890.00;
-//processor.Category = "Podzespoły";
-//processor.Ammount = 10;
-Product ram = new Product("Pamięć RAM", 250.00, "Podzespoły", 15);
-//można też tak
-//Product ram = new Product
-//{
-//    Name = "Pamięć RAM",
-//    Price = 250.00,
-//    Category = "Podzespoły",
-//    Ammount = 15
-//};
-Product ssd = new Product("Dysk ssd", 360.99, "Podzespoły", 27);
-Product zasilacz = new Product("Zasilacz", 190.00, "Podzespoły", 13);
-//Product ssd = new Product
-//{
-//    Name = "Dysk ssd",
-//    Price = 360.99,
-//    Category = "Podzespoły",
-//    Ammount = 27
-//};
-//Product zasilacz = new Product
-//{
-//    Name = "Zasilacz",
-//    Price = 190.00,
-//    Category = "Podzespoły",
-//    Ammount = 13
-//};
+Product processor = new Product("AMD Ryzen", 890.00, "Podzespoły", 5);
+Product ram = new Product("Pamięć RAM", 250.00, "Podzespoły", 5);
+Product ssd = new Product("Dysk ssd", 360.99, "Podzespoły", 5);
+Product zasilacz = new Product("Zasilacz", 190.00, "Podzespoły", 5);
+
 
 //tworzymy tablice produktów
 Product[] products = {processor, ram, ssd, zasilacz};
@@ -77,20 +51,6 @@ Console.WriteLine($"Cena średnia: {AveragePrice}");
 Console.WriteLine($"Najdroższy: {HighestPrice}");
 double WarehouseValue = Product.ObliczWartoscMagazynu(products);
 Console.WriteLine($"Suma wartości magazynu dla wszystkich produktów: {WarehouseValue:f2} zł");
-
-//Console.WriteLine($"Najtańszy: {LowestPrice}| | najdroższy: {HighestPrice}");
-
-//Console.WriteLine($"Najtańszy: {}| cena średnia: {}| najdroższy: {}");
-//for (int i = 0; i < nazwy.Length; i++)
-//{
-//    // Do sumy trafiają tylko produkty droższe niż 200 zł
-//    if (ceny[i] > 200)
-//    {
-//        //1148.5
-//        suma = suma + ceny[i];
-//        licznik++;
-//    }
-//}
 
 //// Uwaga: przy pustym liczniku byłoby dzielenie przez zero
 //double srednia = suma / licznik;

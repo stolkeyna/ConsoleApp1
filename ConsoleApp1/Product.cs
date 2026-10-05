@@ -56,13 +56,13 @@ namespace ConsoleApp1
             get { return _price * Ammount; }
         }
         //Konstruktor - wymaga podanie wszystkich wartości przy tworzeniu objektu
-        public Product(string name, double price, string category, int ammount)
+        public Product(string name, double price, string category, int ammount, int minimalAmmount)
         {
             Name = name;
             Price = price;
             Category = category;
             Ammount = ammount;
-            minimalAmmount = 1;
+            MinimalAmmount = 1;
         }
         //Ten konstruktor - wymaga tylko nazwy
         public Product(string name)
