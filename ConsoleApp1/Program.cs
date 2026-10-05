@@ -48,7 +48,8 @@ double LowestPrice = 0;
 double HighestPrice = 0;
 foreach (Product product in products)
 {
-    Console.WriteLine($"Nazwa: {product.Name, -25}| Cena: {product.Price, 10:F2}| Kategoria: {product.Category}| Ilość: {product.Ammount, 5}");
+    //Console.WriteLine($"Nazwa: {product.Name, -25}| Cena: {product.Price, 10:F2}| Kategoria: {product.Category}| Ilość: {product.Ammount, 5}");
+    product.WypiszProdukt();
     sum += product.Price;
     count++;
     for(int i = 0; i<products.Length; i++)
