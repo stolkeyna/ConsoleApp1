@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Xml.Linq;
 
@@ -46,19 +47,32 @@ namespace ConsoleApp1
         }
 
         public string Category;
-        public int Ammount;
+        public int Ammount { get; private set; }
 
         //właściwość wyliczana - nie przechowujemy tego tylko liczymy na żywo
         public double WarehouseValue
         {
             get { return _price * Ammount; }
         }
+        //Konstruktor - wymaga podanie wszystkich wartości przy tworzeniu objektu
         public Product(string name, double price, string category, int ammount)
         {
             Name = name;
             Price = price;
             Category = category;
             Ammount = ammount;
+        }
+        //Ten konstruktor - wymaga tylko nazwy
+        public Product(string name)
+        {
+            Name = name;
+            Price = 0;
+            Category = "no category";
+            Ammount = 0;
+        }
+        public void WypiszProdukt()
+        {
+            Console.WriteLine($"Nazwa: {Name,-25}| Cena: {Price,10:F2}| Kategoria: {Category}| Ilość: {Ammount,5}");
         }
     }
 }
