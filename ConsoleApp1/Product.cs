@@ -45,6 +45,7 @@ namespace ConsoleApp1
                 }
             }
         }
+        public int minimalAmmount;
 
         public string Category;
         public int Ammount { get; private set; }
@@ -61,6 +62,7 @@ namespace ConsoleApp1
             Price = price;
             Category = category;
             Ammount = ammount;
+            minimalAmmount = 1;
         }
         //Ten konstruktor - wymaga tylko nazwy
         public Product(string name)
@@ -73,6 +75,37 @@ namespace ConsoleApp1
         public void WypiszProdukt()
         {
             Console.WriteLine($"Nazwa: {Name,-25}| Cena: {Price,10:F2}| Kategoria: {Category}| Ilość: {Ammount,5}");
+        }
+        public override string ToString()
+        {
+            return $"Nazwa: {Name,-25}| Cena: {Price,10:F2}| Kategoria: {Category}| Ilość: {Ammount,5}";
+        }
+        public static double ObliczWartoscMagazynu(Product[] products)
+        {
+            double sum = 0;
+            foreach (Product product in products)
+            {
+                sum += product.WarehouseValue;
+            }
+            return sum;
+        }
+        public bool CzyMożnaZamówić()
+        {
+            return Ammount > minimalAmmount; //Jeżeli ilość jest większa minimalnego stanu, można zamówić
+        }
+        public void sprzedaj()
+        {
+            if (CzyMożnaZamówić())
+            {
+                //tak, zdejmij ze stanu 1 sztukę
+                Ammount--;
+                Console.WriteLine($"Szprzedano produkt: {Name}. Pozostało na stanie: {Ammount}");
+            }
+            else
+            {
+                //nie, nie można sprzedać
+                Console.WriteLine($"Nie można sprzedać produkt {Name}. Brak produktu na stanie.");
+            }
         }
     }
 }

@@ -41,7 +41,6 @@ Product zasilacz = new Product("Zasilacz", 190.00, "Podzespoły", 13);
 
 //tworzymy tablice produktów
 Product[] products = {processor, ram, ssd, zasilacz};
-
 double sum = 0;
 int count = 0;
 double LowestPrice = 0;
@@ -67,11 +66,17 @@ foreach (Product product in products)
             HighestPrice = product.Price;
         }
     }
+    for (int i = 0; i <= product.Ammount; i++)
+    {
+        product.sprzedaj();
+    }
 }
 Console.WriteLine($"Najtańszy: {LowestPrice}");
 double AveragePrice = sum / count;
-Console.WriteLine($"cena średnia: {AveragePrice}");
-Console.WriteLine($"najdroższy: {HighestPrice}");
+Console.WriteLine($"Cena średnia: {AveragePrice}");
+Console.WriteLine($"Najdroższy: {HighestPrice}");
+double WarehouseValue = Product.ObliczWartoscMagazynu(products);
+Console.WriteLine($"Suma wartości magazynu dla wszystkich produktów: {WarehouseValue:f2} zł");
 
 //Console.WriteLine($"Najtańszy: {LowestPrice}| | najdroższy: {HighestPrice}");
 
