@@ -119,6 +119,8 @@ namespace ConsoleApp1
                 Console.WriteLine($"Nie można sprzedać produkt {Name}. Brak produktu na stanie.");
             }
         }
+        //funkcje statyczne można wykorzystywać nawet kiedy nie istnieje objektu
+        //niestatyczne niemożna
         public static Product ZnajdzPoNazwie(Product[] products, string name)
         {
             foreach(var product in products)
@@ -129,6 +131,12 @@ namespace ConsoleApp1
                 }
             }
             return null; // jeżeli nie znalezliśmy produkt o danej nazwie, zwracamy null
+        }
+
+        public static Product ZnajdzPoNazwie(List<Product> products, string name)
+        {
+            // zwróć pierwszy który znajdziesz z podobną nazwą (niezależnie od wielkości  liter) lub null jeżeli niema
+            return products.FirstOrDefault(p => p.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
