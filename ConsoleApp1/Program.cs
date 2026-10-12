@@ -75,7 +75,7 @@ double sredniaListy = listaProduktow.Average(p => p.Price);
 double wartoscListy = Product.ObliczWartoscMagazynu(listaProduktow);
 
 Product p = Product.ZnajdzPoNazwie(products, "AMD Ryzen");
-Console.WriteLine($"Znaleziono produkt {p.Name} o cenie {p.Price:C}");
+Console.WriteLine($"Znaleziono produkt {p.Name} o cenie {p.Price:C}. Ilość: {p.Ammount}, kategoria: {p.Category}.");
 
 //// Uwaga: przy pustym liczniku byłoby dzielenie przez zero
 //double srednia = suma / licznik;
