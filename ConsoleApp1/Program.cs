@@ -74,6 +74,9 @@ double sumaDroższychProduktow = listaProduktow.Where(p => p.Price > 200).Sum(p 
 double sredniaListy = listaProduktow.Average(p => p.Price);
 double wartoscListy = Product.ObliczWartoscMagazynu(listaProduktow);
 
+Product p = Product.ZnajdzPoNazwie(products, "AMD Ryzen");
+Console.WriteLine($"Znaleziono produkt {p.Name} o cenie {p.Price:C}");
+
 //// Uwaga: przy pustym liczniku byłoby dzielenie przez zero
 //double srednia = suma / licznik;
 //Console.WriteLine($"Ilość produktów w bazie: {nazwy.Length}.");

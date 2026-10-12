@@ -119,5 +119,16 @@ namespace ConsoleApp1
                 Console.WriteLine($"Nie można sprzedać produkt {Name}. Brak produktu na stanie.");
             }
         }
+        public static Product ZnajdzPoNazwie(Product[] products, string name)
+        {
+            foreach(var product in products)
+            {
+                if(product.Name == name)
+                {
+                    return product; //znależliśmy produkt
+                }
+            }
+            return null; // jeżeli nie znalezliśmy produkt o danej nazwie, zwracamy null
+        }
     }
 }
