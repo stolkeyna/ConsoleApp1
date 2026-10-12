@@ -49,6 +49,7 @@ namespace ConsoleApp1
 
         public string Category;
         public int Ammount { get; private set; }
+        public int MinimalAmmount { get; set; }
 
         //właściwość wyliczana - nie przechowujemy tego tylko liczymy na żywo
         public double WarehouseValue
@@ -89,6 +90,17 @@ namespace ConsoleApp1
             }
             return sum;
         }
+        //wariant liczący sume wartosci magazynu dla listy
+        public static double ObliczWartoscMagazynu(List<Product> products)
+        {
+            double sum = 0;
+            foreach (Product product in products)
+            {
+                sum += product.WarehouseValue;
+            }
+            return sum;
+        }
+
         public bool CzyMożnaZamówić()
         {
             return Ammount > minimalAmmount; //Jeżeli ilość jest większa minimalnego stanu, można zamówić
